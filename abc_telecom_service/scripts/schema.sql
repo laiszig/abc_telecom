@@ -1,0 +1,1 @@
+CREATE DATABASE abc_telecom;
