@@ -1,6 +1,7 @@
 package com.laiszig.abc_telecom_service.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.laiszig.abc_telecom_service.entity.roles.Role;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;

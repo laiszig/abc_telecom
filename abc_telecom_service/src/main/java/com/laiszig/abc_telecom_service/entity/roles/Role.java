@@ -1,4 +1,4 @@
-package com.laiszig.abc_telecom_service.entity;
+package com.laiszig.abc_telecom_service.entity.roles;
 
 public enum Role {
 
