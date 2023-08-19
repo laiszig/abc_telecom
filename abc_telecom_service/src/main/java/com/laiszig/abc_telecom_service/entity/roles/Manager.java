@@ -23,7 +23,7 @@ public class Manager {
     @JoinColumn(name = "USER_ID")
     private User user;
     
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "PIN_CODE_ID")
     private PinCode pinCode;
 }

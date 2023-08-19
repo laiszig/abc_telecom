@@ -26,7 +26,7 @@ public class Customer {
     @Column(name = "CUSTOMER_EMAIL")
     private String email;
     
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "PIN_CODE_ID")
     private PinCode pinCode;
 }
