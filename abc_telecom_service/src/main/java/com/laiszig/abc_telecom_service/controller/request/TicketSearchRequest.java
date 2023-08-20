@@ -1,4 +1,4 @@
-package com.laiszig.abc_telecom_service.entity.request;
+package com.laiszig.abc_telecom_service.controller.request;
 
 import lombok.Data;
 
