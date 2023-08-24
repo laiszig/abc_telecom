@@ -11,5 +11,5 @@ public interface TicketRepository extends JpaRepository<Ticket, Long> {
 
     List<Ticket> findByStatus(Status status);
 
-    List<Ticket> findByPinCode(PinCode code);
+    List<Ticket> findByPinCode_Zip(String code);
 }

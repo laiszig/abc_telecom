@@ -6,4 +6,5 @@ import lombok.Data;
 public class TicketSearchRequest {
 
     private String status;
+    private String pinCode;
 }

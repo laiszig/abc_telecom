@@ -50,8 +50,8 @@ public class TicketController {
     }
 
     @PostMapping("/searchpincode")
-    public List<Ticket> getAllByPinCode(@RequestBody PinCode pinCode) {
-        return ticketService.findTicketsByPinCode(pinCode);
+    public List<Ticket> getAllByPinCode(@RequestBody TicketSearchRequest pinCode) {
+        return ticketService.findTicketsByPinCode(pinCode.getPinCode());
     }
 
 }

@@ -26,8 +26,8 @@ public class TicketService {
         return ticketRepository.findByStatus(status);
     }
 
-    public List<Ticket> findTicketsByPinCode(PinCode pinCode) {
-        return ticketRepository.findByPinCode(pinCode);
+    public List<Ticket> findTicketsByPinCode(String pinCode) {
+        return ticketRepository.findByPinCode_Zip(pinCode);
     }
 
     public Ticket addTicket(Ticket ticket) {
