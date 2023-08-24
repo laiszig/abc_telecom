@@ -1,6 +1,9 @@
 package com.laiszig.abc_telecom_service.controller;
 
+import com.laiszig.abc_telecom_service.controller.request.PinCodeRequest;
 import com.laiszig.abc_telecom_service.controller.request.TicketCreationRequest;
+import com.laiszig.abc_telecom_service.entity.PinCode;
+import com.laiszig.abc_telecom_service.entity.complaint.Status;
 import com.laiszig.abc_telecom_service.entity.complaint.Ticket;
 import com.laiszig.abc_telecom_service.controller.request.TicketSearchRequest;
 import com.laiszig.abc_telecom_service.service.CustomerService;
@@ -26,14 +29,14 @@ public class TicketController {
         this.pinCodeService = pinCodeService;
     }
 
-    @GetMapping("/ticket")
+    @GetMapping("/tickets")
     public List<Ticket> getAll() {
         return ticketService.findAll();
     }
 
     @PostMapping("/searchticket")
     public List<Ticket> searchMovie(@RequestBody TicketSearchRequest search) {
-        return ticketService.findByStatus(search.getStatus());
+        return ticketService.findByStatus(Status.valueOf(search.getStatus()));
     }
 
     @PostMapping("/ticket")
@@ -44,6 +47,11 @@ public class TicketController {
         ticket.setCustomer(customerService.getCustomerById(ticketRequest.getCustomerId()));
         ticket.setPinCode(pinCodeService.getPinCodeById(ticketRequest.getPinCodeId()));
         return ticketService.addTicket(ticket);
+    }
+
+    @PostMapping("/searchpincode")
+    public List<Ticket> getAllByPinCode(@RequestBody PinCode pinCode) {
+        return ticketService.findTicketsByPinCode(pinCode);
     }
 
 }

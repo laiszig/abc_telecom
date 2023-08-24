@@ -22,12 +22,12 @@ public class TicketService {
         return ticketRepository.findAll();
     }
 
-    public List<Ticket> findByStatus(String status) {
+    public List<Ticket> findByStatus(Status status) {
         return ticketRepository.findByStatus(status);
     }
 
     public List<Ticket> findTicketsByPinCode(PinCode pinCode) {
-        return ticketRepository.findByCustomer_PinCode(pinCode);
+        return ticketRepository.findByPinCode(pinCode);
     }
 
     public Ticket addTicket(Ticket ticket) {

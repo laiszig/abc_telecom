@@ -18,7 +18,7 @@ public class PinCode {
     private Long id;
 
     @Column(name = "PIN_CODE")
-    private String pinCode;
+    private String zip;
 
     @Column(name = "AREA_NAME")
     private String area_name;
