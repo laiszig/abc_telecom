@@ -1,6 +1,5 @@
 package com.laiszig.abc_telecom_service.repository;
 
-import com.laiszig.abc_telecom_service.entity.PinCode;
 import com.laiszig.abc_telecom_service.entity.complaint.Status;
 import com.laiszig.abc_telecom_service.entity.complaint.Ticket;
 import org.springframework.data.jpa.repository.JpaRepository;
