@@ -1,4 +1,4 @@
-package com.laiszig.abc_telecom_service.repository;
+package com.laiszig.abc_telecom_service.repository.roles;
 
 import com.laiszig.abc_telecom_service.entity.roles.Customer;
 import org.springframework.data.jpa.repository.JpaRepository;

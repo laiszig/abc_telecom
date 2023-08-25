@@ -4,7 +4,7 @@ import com.laiszig.abc_telecom_service.controller.request.TicketCreationRequest;
 import com.laiszig.abc_telecom_service.entity.complaint.Status;
 import com.laiszig.abc_telecom_service.entity.complaint.Ticket;
 import com.laiszig.abc_telecom_service.controller.request.TicketSearchRequest;
-import com.laiszig.abc_telecom_service.service.CustomerService;
+import com.laiszig.abc_telecom_service.service.roles.CustomerService;
 import com.laiszig.abc_telecom_service.service.PinCodeService;
 import com.laiszig.abc_telecom_service.service.TicketService;
 import org.springframework.web.bind.annotation.GetMapping;

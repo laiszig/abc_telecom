@@ -1,7 +1,7 @@
-package com.laiszig.abc_telecom_service.service;
+package com.laiszig.abc_telecom_service.service.roles;
 
 import com.laiszig.abc_telecom_service.entity.roles.Customer;
-import com.laiszig.abc_telecom_service.repository.CustomerRepository;
+import com.laiszig.abc_telecom_service.repository.roles.CustomerRepository;
 import org.springframework.stereotype.Service;
 
 @Service
