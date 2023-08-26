@@ -37,8 +37,8 @@ public class TicketController {
         return ticketService.findByStatus(Status.valueOf(search.getStatus()));
     }
 
-    @PostMapping("/ticket")
-    public Ticket createTicket(TicketCreationRequest ticketRequest) {
+    @PostMapping("/ticket/add")
+    public Ticket createTicket(@RequestBody TicketCreationRequest ticketRequest) {
         Ticket ticket = new Ticket();
         ticket.setDescription(ticketRequest.getDescription());
         ticket.setProblemType(ticketRequest.getProblemType());
