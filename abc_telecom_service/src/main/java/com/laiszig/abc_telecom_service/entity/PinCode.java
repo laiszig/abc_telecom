@@ -21,5 +21,5 @@ public class PinCode {
     private String zip;
 
     @Column(name = "AREA_NAME")
-    private String area_name;
+    private String areaName;
 }
