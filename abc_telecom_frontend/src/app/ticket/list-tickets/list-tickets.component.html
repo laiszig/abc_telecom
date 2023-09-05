@@ -1,0 +1,53 @@
+<br>
+<br>
+<br>
+<br>
+<a class="nav-link" routerLink="/ticket/add">Open Ticket</a>
+<a class="nav-link" routerLink="/addshowtime">Assign ticket</a>
+<br>
+<h1>Opened Tickets</h1>
+
+<!-- <select (change)="statusSelection($event)">
+    <option value="0">Status</option>
+    <option *ngFor="let status of statuses" value="{{ status.id }}">{{ status.description }}</option>
+</select> -->
+<!-- <div class="row">
+  <div class="col-md-4">
+      <input type="text"
+          [(ngModel)]="filters.keyword"
+          name="keyword"
+          (input)="listTickets()" 
+          class="form-control"
+          placeholder="Filter tickets"/>
+  </div>
+</div> -->
+<table>
+  <thead>
+    <tr>
+      <!-- <th>Complaint</th> -->
+      <!-- <th>Status</th> -->
+      <th>Problem Type</th>
+      <th>Description</th>
+      <!-- <th>Customer</th> -->
+      <th>Pin Code</th>
+      <!-- <th>Manager Assigned</th> -->
+      <!-- <th>Engineer Assigned</th> -->
+      <!-- <th>Feedback</th> -->
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let ticket of tickets">
+      <!-- <td>{{ ticket.status }}</td> -->
+      <td>{{ ticket.problemType }}</td>
+      <td>{{ ticket.description }}</td>
+      <!-- <td>{{ ticket.customer.name }}</td> -->
+      <td>{{ ticket.pinCode.zip }}</td>
+      <!-- <td>{{ ticket.manager.name}}</td> -->
+      <!-- <td>{{ ticket.engineer.name}}</td> -->
+      <!-- <td>{{ ticket.feeback}}</td> -->
+      <!-- <td>
+        <button (click)="redirectToMovieShowtimes($event);" value="{{movie.id}}">View Showtimes</button>
+      </td> -->
+    </tr>
+  </tbody>
+</table>

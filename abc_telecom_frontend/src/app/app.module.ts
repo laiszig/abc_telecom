@@ -3,8 +3,10 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { CreateTicketComponent } from './create-ticket/create-ticket.component';
-import { ListTicketsComponent } from './list-tickets/list-tickets.component';
+import { CreateTicketComponent } from './ticket/create-ticket/create-ticket.component';
+import { ListTicketsComponent } from './ticket/list-tickets/list-tickets.component';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -14,7 +16,9 @@ import { ListTicketsComponent } from './list-tickets/list-tickets.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
