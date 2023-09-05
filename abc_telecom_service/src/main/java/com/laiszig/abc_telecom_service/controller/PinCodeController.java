@@ -2,12 +2,14 @@ package com.laiszig.abc_telecom_service.controller;
 
 import com.laiszig.abc_telecom_service.entity.PinCode;
 import com.laiszig.abc_telecom_service.service.PinCodeService;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
 @RestController
+@CrossOrigin(origins = "http://localhost:4200")
 public class PinCodeController {
 
     private final PinCodeService pinCodeService;
