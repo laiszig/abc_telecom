@@ -50,4 +50,8 @@ public class TicketController {
         return ticketService.findTicketsByPinCode(pinCode.getPinCode());
     }
 
+    @PostMapping("/ticket/status")
+    public List<Ticket> getAllByStatus(@RequestBody Status status) {
+        return ticketService.findByStatus(status);
+    }
 }
