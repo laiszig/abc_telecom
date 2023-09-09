@@ -1,1 +1,38 @@
-<p>create-ticket works!</p>
+<br>
+<br>
+
+<br>
+<br>
+<br>
+
+<h2 class="create-ticket-title">Create Ticket</h2>
+<form
+    name="form"
+    (ngSubmit)="onSubmit()"
+    #f="ngForm"
+    novalidate
+    >
+
+    <label for="status"> Status: </label>
+    <input [(ngModel)]="form.status" name="status" />
+    <br />
+
+    <label for="problemType"> Problem Type: </label>
+    <input [(ngModel)]="form.problemType" name="problemType" type="string" />
+    <br />
+
+    <label for="pinCode"> Pincode: </label>
+    <select (change)="pinCodeSelection($event)">
+        <option value="0">Select Pincode</option>
+        <option *ngFor="let pinCode of pinCodes" value="{{ pinCode.id }}">{{ pinCode.areaName }}</option>
+    </select>
+    <br />
+
+    <label for="description"> Description: </label> <br />
+    <textarea [(ngModel)]="form.description" name="description" cols="30" rows="10"></textarea>
+    <br />
+
+    <div class="form-group">
+        <button class="btn btn-primary btn-block">Create Ticket</button>
+    </div>
+</form>
