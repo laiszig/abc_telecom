@@ -1,4 +1,5 @@
 import { PinCode } from "../pinCode/pincode";
+import { Status } from "./status";
 
 export class Ticket {
     id: number;
@@ -9,7 +10,7 @@ export class Ticket {
     // manager: Manager;
     // engineer: Engineer;
     pinCode: PinCode;
-    // status: Status;
+    status: Status;
     
     
     

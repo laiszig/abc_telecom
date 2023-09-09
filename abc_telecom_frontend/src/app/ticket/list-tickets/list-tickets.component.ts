@@ -4,6 +4,7 @@ import { PincodeService } from 'src/app/pinCode/pincode.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Ticket } from '../ticket';
 import { PinCode } from 'src/app/pinCode/pincode';
+import { Status } from '../status';
 
 @Component({
   selector: 'app-list-tickets',
@@ -16,12 +17,12 @@ export class ListTicketsComponent implements OnInit{
     private router: Router,
     private activatedRoute: ActivatedRoute,
     private listTicketService: ListTicketsService,
-    private pinCodeService: PincodeService
+    private pinCodeService: PincodeService,
   ) {}
 
   tickets: Ticket[];
   pinCodes: PinCode[];
-  // statuses: Status[];
+  statuses: Status[];
   filters = {
     keyword: ''
   }
@@ -47,8 +48,22 @@ export class ListTicketsComponent implements OnInit{
 
   filterTickets(tickets: Ticket[]) {
     return tickets.filter((m) => {
-      return m.problemType.toLowerCase().includes(this.filters.keyword.toLowerCase());
+      return (m.problemType.toLowerCase().includes(this.filters.keyword.toLowerCase()) || 
+      m.status.toString().toLowerCase().includes(this.filters.keyword.toLowerCase()));
     })
+  }  
+
+  statusSelection = (event: any) => {
+    const status = event.target.value;
+    if (status != 0) {
+      this.listTicketService
+      .getTicketsByStatus(status)
+      .subscribe((result) => (this.tickets = result));
+    } else {
+      this.listTicketService
+      .getAllTickets()
+      .subscribe((result) => (this.tickets = result));
+    }
   }
 
 }
