@@ -11,7 +11,4 @@ export class Ticket {
     // engineer: Engineer;
     pinCode: PinCode;
     status: Status;
-    
-    
-    
 }
