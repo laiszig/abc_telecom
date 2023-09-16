@@ -1,7 +1,6 @@
 package com.laiszig.abc_telecom_service.service;
 
 import com.laiszig.abc_telecom_service.entity.PinCode;
-import com.laiszig.abc_telecom_service.entity.roles.Customer;
 import com.laiszig.abc_telecom_service.repository.PinCodeRepository;
 import org.springframework.stereotype.Service;
 

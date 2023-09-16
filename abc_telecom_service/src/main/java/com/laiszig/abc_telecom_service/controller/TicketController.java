@@ -40,7 +40,7 @@ public class TicketController {
         Ticket ticket = new Ticket();
         ticket.setDescription(ticketRequest.getDescription());
         ticket.setProblemType(ticketRequest.getProblemType());
-        ticket.setCustomer(customerService.getCustomerById(ticketRequest.getCustomerId()));
+//        ticket.setCustomer(customerService.getCustomerById(ticketRequest.getCustomerId()));
         ticket.setPinCode(pinCodeService.getPinCodeById(ticketRequest.getPinCodeId()));
         return ticketService.addTicket(ticket);
     }
