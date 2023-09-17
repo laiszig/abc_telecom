@@ -3,6 +3,7 @@ import { Ticket } from '../ticket';
 import { CreateTicketService } from './create-ticket.service';
 import { PincodeService } from 'src/app/pinCode/pincode.service';
 import { PinCode } from 'src/app/pinCode/pincode';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-create-ticket',
@@ -12,7 +13,8 @@ import { PinCode } from 'src/app/pinCode/pincode';
 export class CreateTicketComponent {
   constructor(
     private pinCodeService: PincodeService,
-    private createTicketService: CreateTicketService
+    private createTicketService: CreateTicketService,
+    private router: Router
   ) {}
 
   tickets: Ticket[];
@@ -38,11 +40,13 @@ export class CreateTicketComponent {
     .subscribe(
       data => {
         console.log("Processed")
+        this.router.navigate(['/ticket']);
       },
       error => {
         console.log("Error processing")
         console.log(error)
       });
+      
   }
 
   btnClick = () => {
@@ -51,7 +55,6 @@ export class CreateTicketComponent {
 
   pinCodeSelection = (event: any) => {
     const pinCodeId = event.target.value;
-
     this.form.pinCodeId = pinCodeId;
   };
 }
