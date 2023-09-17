@@ -1,9 +1,7 @@
 package com.laiszig.abc_telecom_service.service;
 
-import com.laiszig.abc_telecom_service.entity.PinCode;
 import com.laiszig.abc_telecom_service.entity.complaint.Status;
 import com.laiszig.abc_telecom_service.entity.complaint.Ticket;
-import com.laiszig.abc_telecom_service.entity.roles.Customer;
 import com.laiszig.abc_telecom_service.repository.TicketRepository;
 import org.springframework.stereotype.Service;
 
@@ -33,6 +31,7 @@ public class TicketService {
 
     public Ticket addTicket(Ticket ticket) {
         ticket.setCreationDate(LocalDateTime.now());
+        ticket.setLastUpdateDate(LocalDateTime.now());
         ticket.setStatus(Status.OPEN);
         return ticketRepository.save(ticket);
     }

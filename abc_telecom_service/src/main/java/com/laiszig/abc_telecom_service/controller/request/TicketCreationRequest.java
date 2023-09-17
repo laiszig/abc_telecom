@@ -10,5 +10,5 @@ public class TicketCreationRequest {
     private Long customerId;
     private String problemType;
     private String description;
-    private Long pinCodeId;
+    private PinCode pinCode;
 }
