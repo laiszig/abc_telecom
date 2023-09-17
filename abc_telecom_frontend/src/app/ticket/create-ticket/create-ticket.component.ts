@@ -22,7 +22,7 @@ export class CreateTicketComponent {
       status: null,
       problemType: null,
       description: null,
-      pinCode: null,
+      pinCodeId: null,
     };
 
   ngOnInit(): void {
@@ -51,11 +51,7 @@ export class CreateTicketComponent {
 
   pinCodeSelection = (event: any) => {
     const pinCodeId = event.target.value;
-    const pinCode : PinCode = {
-      id: pinCodeId,
-      areaName: '',
-      zip: ''
-    };
-    this.form.pinCode = pinCode;
+
+    this.form.pinCodeId = pinCodeId;
   };
 }

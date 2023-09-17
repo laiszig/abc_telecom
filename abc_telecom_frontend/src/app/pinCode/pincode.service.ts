@@ -15,4 +15,5 @@ export class PincodeService {
   getAllPinCodes(): Observable<PinCode[]> {
     return this.http.get<PinCode[]>(this.url);
   }
+
 }
