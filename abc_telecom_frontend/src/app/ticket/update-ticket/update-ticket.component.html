@@ -1,11 +1,11 @@
 <br>
 <br>
+
+<br>
 <br>
 <br>
 
-<a class="nav-link" routerLink="/ticket">Back</a> <br>
-<br>
-<h2 class="create-ticket-title">Create Ticket</h2>
+<p>Update Movie</p>
 <form
     name="form"
     (ngSubmit)="onSubmit()"
@@ -13,24 +13,22 @@
     novalidate
     >
 
-    <!-- logged customer info -->
-
-    <label for="problemType"> Problem Type: </label>
-    <input [(ngModel)]="form.problemType" name="problemType" type="string" />
+    <label for="name"> Problem Type: </label>
+    <input [(ngModel)]="form.problemType" name="problemType" />
     <br />
 
-    <label for="pinCode"> Pincode: </label>
+    <!-- <label for="pinCode"> Pincode: </label>
     <select (change)="pinCodeSelection($event)">
         <option value="0">Select Pincode</option>
         <option *ngFor="let pinCode of pinCodes" value="{{ pinCode.id }}">{{ pinCode.areaName }}</option>
-    </select>
-    <br />
+    </select>   
+    <br /> -->
 
     <label for="description"> Description: </label> <br />
     <textarea [(ngModel)]="form.description" name="description" cols="30" rows="10"></textarea>
     <br />
 
     <div class="form-group">
-        <button class="btn btn-primary btn-block">Create Ticket</button>
+        <button class="btn btn-primary btn-block">Update Ticket</button>
     </div>
 </form>
