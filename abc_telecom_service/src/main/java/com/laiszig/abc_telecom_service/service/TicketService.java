@@ -42,7 +42,7 @@ public class TicketService {
         return ticketRepository.save(ticket);
     }
 
-    public void updateTicket(Long ticketId, String problemType, String description) {
+    public Ticket updateTicket(Long ticketId, String problemType, String description) {
         Optional<Ticket> optionalTicket = ticketRepository.findById(ticketId);
 
         if (optionalTicket.isPresent()) {
@@ -56,7 +56,7 @@ public class TicketService {
                 ticket.setDescription(description);
             }
 
-            ticketRepository.save(ticket);
+            return ticketRepository.save(ticket);
         } else {
             throw new IllegalArgumentException("Ticket not found with ID: " + ticketId);
         }
