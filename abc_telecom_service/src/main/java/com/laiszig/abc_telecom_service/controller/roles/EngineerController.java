@@ -23,7 +23,7 @@ public class EngineerController {
     }
 
     @PostMapping("/engineer/search")
-    public List<Engineer> searchUser(@RequestBody EngineerSearchRequest engineer) {
+    public List<Engineer> searchEngineerByPincode(@RequestBody EngineerSearchRequest engineer) {
         return engineerService.findEngineerByPinCode(engineer.getPinCode());
     }
 

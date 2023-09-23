@@ -7,4 +7,5 @@ public class EngineerSearchRequest {
 
     private Long id;
     private String pinCode;
+    private String name;
 }

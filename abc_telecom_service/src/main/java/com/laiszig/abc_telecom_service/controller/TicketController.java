@@ -1,6 +1,7 @@
 package com.laiszig.abc_telecom_service.controller;
 
 import com.laiszig.abc_telecom_service.controller.request.TicketCreationRequest;
+import com.laiszig.abc_telecom_service.controller.request.TicketUpdateRequest;
 import com.laiszig.abc_telecom_service.entity.complaint.Status;
 import com.laiszig.abc_telecom_service.entity.complaint.Ticket;
 import com.laiszig.abc_telecom_service.controller.request.TicketSearchRequest;
@@ -60,8 +61,11 @@ public class TicketController {
 
     @PutMapping("/ticket/update/{id}")
     public ResponseEntity<Ticket> updateTicket(@PathVariable("id") Long ticketId,
-                                               @RequestBody TicketCreationRequest ticketRequest) {
-        ticketService.updateTicket(ticketId, ticketRequest.getProblemType(), ticketRequest.getDescription());
+                                               @RequestBody TicketUpdateRequest ticketRequest) {
+        ticketService.updateTicket(ticketId,
+                ticketRequest.getProblemType(),
+                ticketRequest.getDescription(),
+                ticketRequest.getEngineerId());
 
         return new ResponseEntity<>(HttpStatus.OK);
     }
