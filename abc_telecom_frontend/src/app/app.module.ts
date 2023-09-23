@@ -8,13 +8,15 @@ import { ListTicketsComponent } from './ticket/list-tickets/list-tickets.compone
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { UpdateTicketComponent } from './ticket/update-ticket/update-ticket.component';
+import { TicketDetailsComponent } from './ticket/ticket-details/ticket-details.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CreateTicketComponent,
     ListTicketsComponent,
-    UpdateTicketComponent
+    UpdateTicketComponent,
+    TicketDetailsComponent
   ],
   imports: [
     BrowserModule,

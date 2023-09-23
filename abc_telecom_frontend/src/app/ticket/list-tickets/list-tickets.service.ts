@@ -21,8 +21,5 @@ export class ListTicketsService {
   getTicketsByStatus(id: any): Observable<Ticket[]> {
     return this.http.post<Ticket[]>(this.url + "/ticket/status", {"status" : Status})
   }
-
-  getTicketById(id: number): Observable<Ticket> {
-    return this.http.get<Ticket>(this.url + "/ticket/" + id);
-  }
+  
 }

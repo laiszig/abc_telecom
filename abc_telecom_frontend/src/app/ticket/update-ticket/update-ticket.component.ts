@@ -5,6 +5,7 @@ import { ListTicketsService } from '../list-tickets/list-tickets.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Ticket } from '../ticket';
 import { PinCode } from 'src/app/pinCode/pincode';
+import { TicketDetailsService } from '../ticket-details/ticket-details.service';
 
 @Component({
   selector: 'app-update-ticket',
@@ -17,6 +18,7 @@ export class UpdateTicketComponent {
     private pincodeService: PincodeService,
     private updateTicketService: UpdateTicketService,
     private ticketService: ListTicketsService,
+    private ticketDetailsService: TicketDetailsService,
     private route: ActivatedRoute,
     private router: Router
   ) {}
@@ -32,7 +34,7 @@ export class UpdateTicketComponent {
     };
 
   ngOnInit(): void {
-    this.ticketService.getTicketById(this.route.snapshot.params['id'])
+    this.ticketDetailsService.getTicketById(this.route.snapshot.params['id'])
       .subscribe((result) => {
         this.ticket = result;
         this.form.problemType = this.ticket.problemType;
@@ -56,8 +58,6 @@ export class UpdateTicketComponent {
         console.log(error)
       }
     );
-
-
   }
 
   btnClick = () => {

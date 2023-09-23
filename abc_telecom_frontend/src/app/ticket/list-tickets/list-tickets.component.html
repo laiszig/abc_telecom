@@ -30,6 +30,7 @@
       <!-- <th>Manager Assigned</th> -->
       <!-- <th>Engineer Assigned</th> -->
       <!-- <th>Feedback</th> -->
+      <th></th>
     </tr>
   </thead>
   <tbody>
@@ -42,9 +43,9 @@
       <!-- <td>{{ ticket.manager.name}}</td> -->
       <!-- <td>{{ ticket.engineer.name}}</td> -->
       <!-- <td>{{ ticket.feeback}}</td> -->
-      <!-- <td>
-        <button (click)="redirectToMovieShowtimes($event);" value="{{movie.id}}">View Showtimes</button>
-      </td> -->
+      <td>
+        <button (click)="redirectToTicketDetails($event);" value="{{ ticket.id }}">View Details</button>
+      </td>
     </tr>
   </tbody>
 </table>

@@ -5,6 +5,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { Ticket } from '../ticket';
 import { PinCode } from 'src/app/pinCode/pincode';
 import { Status } from '../status';
+import { TicketDetailsService } from '../ticket-details/ticket-details.service';
 
 @Component({
   selector: 'app-list-tickets',
@@ -18,6 +19,7 @@ export class ListTicketsComponent implements OnInit{
     private activatedRoute: ActivatedRoute,
     private listTicketService: ListTicketsService,
     private pinCodeService: PincodeService,
+    private ticketDetailsService: TicketDetailsService
   ) {}
 
   tickets: Ticket[];
@@ -64,6 +66,12 @@ export class ListTicketsComponent implements OnInit{
       .getAllTickets()
       .subscribe((result) => (this.tickets = result));
     }
+  }
+
+  redirectToTicketDetails(event: any) {
+    const ticketId = event.target.value;
+    const url: String = "/ticket/details/" + ticketId;
+    this.router.navigate([url]);
   }
 
 }
