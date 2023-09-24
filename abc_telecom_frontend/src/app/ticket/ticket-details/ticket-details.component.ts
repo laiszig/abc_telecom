@@ -4,6 +4,7 @@ import { Ticket } from '../ticket';
 import { TicketDetailsService } from './ticket-details.service';
 import { PinCode } from 'src/app/pinCode/pincode';
 import { Engineer } from 'src/app/roles/engineer';
+import { Manager } from 'src/app/roles/manager';
 
 @Component({
   selector: 'app-ticket-details',
@@ -21,6 +22,7 @@ export class TicketDetailsComponent {
     this.ticket = new Ticket();
     this.ticket.pinCode = new PinCode();
     this.ticket.engineerAssigned = new Engineer();
+    this.ticket.managerAssigned = new Manager();
   }
 
   ticket: Ticket;
