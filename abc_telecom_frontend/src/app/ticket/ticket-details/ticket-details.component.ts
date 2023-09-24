@@ -1,10 +1,9 @@
 import { Component } from '@angular/core';
-import { ListTicketsService } from '../list-tickets/list-tickets.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Ticket } from '../ticket';
 import { TicketDetailsService } from './ticket-details.service';
-import { tick } from '@angular/core/testing';
 import { PinCode } from 'src/app/pinCode/pincode';
+import { Engineer } from 'src/app/roles/engineer';
 
 @Component({
   selector: 'app-ticket-details',
@@ -16,12 +15,12 @@ export class TicketDetailsComponent {
   constructor(
     private router: Router,
     private activatedRoute: ActivatedRoute,
-    private ticketService: ListTicketsService,
     private ticketDetailsService: TicketDetailsService
   ) {
 
     this.ticket = new Ticket();
     this.ticket.pinCode = new PinCode();
+    this.ticket.engineerAssigned = new Engineer();
   }
 
   ticket: Ticket;
@@ -31,23 +30,8 @@ export class TicketDetailsComponent {
       this.ticketDetailsService.getTicketById(ticketId["id"])
       .subscribe((result) => {
         this.ticket = result;
+        console.log(this.ticket)
     });
-  })
-    
-    /**
-    this.activatedRoute.queryParams.subscribe((ticket: any) =>{
-
-console.log(ticket)
-
-      this.ticketDetailsService.getTicketById(ticket.ticketId)
-        .subscribe((result) => {
-          this.ticket = result;
-          console.log(result)
-        });
-
-    })
-    */
-  }
-
+  })}
   
 }

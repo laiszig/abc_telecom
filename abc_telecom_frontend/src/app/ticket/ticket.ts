@@ -1,3 +1,4 @@
+import { Engineer } from "../roles/engineer";
 import { PinCode } from "../pinCode/pincode";
 import { Status } from "./status";
 
@@ -8,7 +9,7 @@ export class Ticket {
     description: String;
     // feedback: Feedback;
     // manager: Manager;
-    // engineer: Engineer;
+    engineerAssigned: Engineer;
     pinCode: PinCode;
     status: Status;
 }
