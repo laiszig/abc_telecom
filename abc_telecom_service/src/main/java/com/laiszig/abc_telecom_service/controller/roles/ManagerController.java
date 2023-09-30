@@ -23,7 +23,7 @@ public class ManagerController {
     }
 
     @PostMapping("/manager/search")
-    public List<Manager> searchUser(@RequestBody ManagerSearchRequest manager) {
+    public List<Manager> searchManagerByPincode(@RequestBody ManagerSearchRequest manager) {
         return managerService.findManagerByPinCode(manager.getPinCode());
     }
 

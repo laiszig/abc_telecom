@@ -10,5 +10,5 @@ public class TicketUpdateRequest {
     private String description;
     private Long pinCodeId;
     private Long engineerId;
-//    private Manager manager;
+    private Long managerId;
 }

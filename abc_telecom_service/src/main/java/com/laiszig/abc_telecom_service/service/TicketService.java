@@ -6,21 +6,23 @@ import com.laiszig.abc_telecom_service.entity.roles.Engineer;
 import com.laiszig.abc_telecom_service.entity.roles.Manager;
 import com.laiszig.abc_telecom_service.repository.TicketRepository;
 import com.laiszig.abc_telecom_service.repository.roles.EngineerRepository;
+import com.laiszig.abc_telecom_service.repository.roles.ManagerRepository;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class TicketService {
 
     private final TicketRepository ticketRepository;
     private final EngineerRepository engineerRepository;
+    private final ManagerRepository managerRepository;
 
-    public TicketService(TicketRepository ticketRepository, EngineerRepository engineerRepository) {
+    public TicketService(TicketRepository ticketRepository, EngineerRepository engineerRepository, ManagerRepository managerRepository) {
         this.ticketRepository = ticketRepository;
         this.engineerRepository = engineerRepository;
+        this.managerRepository = managerRepository;
     }
 
     public List<Ticket> findAll() {
@@ -46,7 +48,8 @@ public class TicketService {
         return ticketRepository.save(ticket);
     }
 
-    public Ticket updateTicket(Long ticketId, String problemType, String description, Long engineerId) {
+    public Ticket updateTicket(Long ticketId, String problemType, String description,
+                               Long engineerId, Long managerId) {
 
         Ticket ticket = ticketRepository.findById(ticketId)
                 .orElseThrow(() -> new IllegalArgumentException("Ticket not found with ID: " + ticketId));
@@ -65,9 +68,11 @@ public class TicketService {
             ticket.setEngineerAssigned(engineer);
         }
 
-//            if (manager != null) {
-//                ticket.setManagerAssigned(manager);
-//            }
+        if (engineerId != null) {
+            Manager manager = managerRepository.findById(managerId)
+                    .orElseThrow(() -> new IllegalArgumentException("Engineer not found with ID: " + engineerId));
+            ticket.setManagerAssigned(manager);
+        }
 
         return ticketRepository.save(ticket);
     }

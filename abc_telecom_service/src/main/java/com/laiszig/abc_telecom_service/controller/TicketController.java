@@ -65,7 +65,8 @@ public class TicketController {
         ticketService.updateTicket(ticketId,
                 ticketRequest.getProblemType(),
                 ticketRequest.getDescription(),
-                ticketRequest.getEngineerId());
+                ticketRequest.getEngineerId(),
+                ticketRequest.getManagerId());
 
         return new ResponseEntity<>(HttpStatus.OK);
     }
