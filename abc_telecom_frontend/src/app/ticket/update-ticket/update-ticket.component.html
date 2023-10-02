@@ -17,12 +17,19 @@
     <input [(ngModel)]="form.problemType" name="problemType" />
     <br />
 
-    <!-- <label for="pinCode"> Pincode: </label>
+    <label for="pinCode"> Pincode: </label>
     <select (change)="pinCodeSelection($event)">
         <option value="0">Select Pincode</option>
         <option *ngFor="let pinCode of pinCodes" value="{{ pinCode.id }}">{{ pinCode.areaName }}</option>
     </select>   
-    <br /> -->
+    <br />
+
+    <label for="pinCode"> Manager: </label>
+    <select (change)="managerSelection($event)">
+        <option value="0">Select Manager</option>
+        <option *ngFor="let manager of managers" value="{{ manager.id }}">{{ manager.user.username }}</option>
+    </select>   
+    <br />
 
     <label for="description"> Description: </label> <br />
     <textarea [(ngModel)]="form.description" name="description" cols="30" rows="10"></textarea>
