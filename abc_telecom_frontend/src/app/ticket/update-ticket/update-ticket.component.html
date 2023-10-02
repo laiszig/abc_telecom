@@ -5,17 +5,13 @@
 <br>
 <br>
 
-<p>Update Movie</p>
+<p>Assign Ticket</p>
 <form
     name="form"
     (ngSubmit)="onSubmit()"
     #f="ngForm"
     novalidate
     >
-
-    <label for="name"> Problem Type: </label>
-    <input [(ngModel)]="form.problemType" name="problemType" />
-    <br />
 
     <label for="pinCode"> Pincode: </label>
     <select (change)="pinCodeSelection($event)">
@@ -24,17 +20,20 @@
     </select>   
     <br />
 
-    <label for="pinCode"> Manager: </label>
+    <label for="manager"> Manager: </label>
     <select (change)="managerSelection($event)">
         <option value="0">Select Manager</option>
         <option *ngFor="let manager of managers" value="{{ manager.id }}">{{ manager.user.username }}</option>
     </select>   
-    <br />
+    <br/>
 
-    <label for="description"> Description: </label> <br />
-    <textarea [(ngModel)]="form.description" name="description" cols="30" rows="10"></textarea>
+    <label for="engineer"> Engineer: </label>
+    <select (change)="engineerSelection($event)">
+        <option value="0">Select Engineer</option>
+        <option *ngFor="let engineer of engineers" value="{{ engineer.id }}">{{ engineer.user.username }}</option>
+    </select>   
     <br />
-
+<br>
     <div class="form-group">
         <button class="btn btn-primary btn-block">Update Ticket</button>
     </div>

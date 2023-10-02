@@ -90,6 +90,11 @@ export class UpdateTicketComponent {
     this.form.managerId = managerId;
   };
 
+  engineerSelection = (event: any) => {
+    const engineerId = event.target.value;
+    this.form.engineerId = engineerId;
+  };
+
   btnClick = () => {
     console.log("Movie Updated!");  
   };
