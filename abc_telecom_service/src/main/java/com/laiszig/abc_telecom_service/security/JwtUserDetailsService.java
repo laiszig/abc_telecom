@@ -15,7 +15,7 @@ import java.util.Optional;
 public class JwtUserDetailsService implements UserDetailsService {
 
     @Autowired
-    private UserRepository userRepository;
+    private UserEntityRepository userEntityRepository;
 
     @Autowired
     private PasswordEncoder bcryptEncoder;
@@ -23,7 +23,7 @@ public class JwtUserDetailsService implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        return Optional.ofNullable(userRepository.findByUsername(username))
+        return Optional.ofNullable(userEntityRepository.findByUsername(username))
                 .map(userEntity -> new User(userEntity.getUsername(), userEntity.getPassword(),new ArrayList<>()))
                 .orElseThrow(() -> new UsernameNotFoundException("User not found with username: " + username));
     }
@@ -32,6 +32,6 @@ public class JwtUserDetailsService implements UserDetailsService {
         UserEntity newUser = new UserEntity();
         newUser.setUsername(user.getUsername());
         newUser.setPassword(bcryptEncoder.encode(user.getPassword()));
-        return userRepository.save(newUser);
+        return userEntityRepository.save(newUser);
     }
 }

@@ -5,7 +5,7 @@ import com.laiszig.abc_telecom_service.entity.PinCode;
 import com.laiszig.abc_telecom_service.entity.roles.Customer;
 import com.laiszig.abc_telecom_service.entity.roles.Engineer;
 import com.laiszig.abc_telecom_service.entity.roles.Manager;
-import jakarta.persistence.*;
+import javax.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
