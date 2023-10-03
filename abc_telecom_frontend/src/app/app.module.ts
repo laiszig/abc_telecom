@@ -5,10 +5,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CreateTicketComponent } from './ticket/create-ticket/create-ticket.component';
 import { ListTicketsComponent } from './ticket/list-tickets/list-tickets.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { UpdateTicketComponent } from './ticket/update-ticket/update-ticket.component';
 import { TicketDetailsComponent } from './ticket/ticket-details/ticket-details.component';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
+import { SecurityInterceptorService } from './security-interceptor.service';
 
 @NgModule({
   declarations: [
@@ -16,7 +19,9 @@ import { TicketDetailsComponent } from './ticket/ticket-details/ticket-details.c
     CreateTicketComponent,
     ListTicketsComponent,
     UpdateTicketComponent,
-    TicketDetailsComponent
+    TicketDetailsComponent,
+    RegisterComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
@@ -24,7 +29,7 @@ import { TicketDetailsComponent } from './ticket/ticket-details/ticket-details.c
     HttpClientModule,
     FormsModule
   ],
-  providers: [],
+  providers: [{ provide: HTTP_INTERCEPTORS, useClass: SecurityInterceptorService, multi: true }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

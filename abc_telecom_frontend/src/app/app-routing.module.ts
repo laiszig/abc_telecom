@@ -4,6 +4,8 @@ import { ListTicketsComponent } from './ticket/list-tickets/list-tickets.compone
 import { CreateTicketComponent } from './ticket/create-ticket/create-ticket.component';
 import { UpdateTicketComponent } from './ticket/update-ticket/update-ticket.component';
 import { TicketDetailsComponent } from './ticket/ticket-details/ticket-details.component';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
 
 const routes: Routes = [
   {"path":"ticket", component: ListTicketsComponent},
@@ -11,6 +13,8 @@ const routes: Routes = [
   {"path":"ticket/update/:id", component:UpdateTicketComponent},
   {"path":"ticket/details/:id", component:TicketDetailsComponent},
   // {"path":"ticket/:id", component:TicketDetailsComponent}
+  {"path":"register",component:RegisterComponent},
+  {"path":"login",component:LoginComponent},
 ];
 
 @NgModule({
