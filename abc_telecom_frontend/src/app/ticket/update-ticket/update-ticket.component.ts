@@ -96,7 +96,7 @@ export class UpdateTicketComponent {
   };
 
   btnClick = () => {
-    console.log("Movie Updated!");  
+    console.log("Ticket Updated!");  
   };
 
 }

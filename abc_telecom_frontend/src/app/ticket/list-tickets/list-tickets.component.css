@@ -19,3 +19,21 @@ table, th , td {
   table tr:nth-child(even) {
     background-color: #ffffff;
   }
+
+  .nav-link {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #fff;
+    background-color: #d40707;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.nav-link:hover {
+    background-color: #7f1717;
+}
+

@@ -4,8 +4,37 @@
 <br>
 <br>
 <br>
+<a class="nav-link" routerLink="/ticket">Back</a> <br>
+<h2 class="update-ticket-title">Assign Ticket</h2>
 
-<p>Assign Ticket</p>
+<table>
+    <thead>
+      <tr>
+      <th>Status</th>
+      <th>Problem Type</th>
+      <th>Description</th>
+      <!-- <th>Customer</th> -->
+      <th>Pin Code</th>
+      <th>Manager Assigned</th>
+      <th>Engineer Assigned</th>
+      <!-- <th>Feedback</th> -->
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+        <td>{{ ticket.status }}</td>
+        <td>{{ ticket.problemType }}</td>
+        <td>{{ ticket.description }}</td>
+        <!-- <td>{{ ticket.customer.name }}</td> -->
+        <td>{{ ticket.pinCode.zip }}</td>
+        <td>{{ ticket.managerAssigned.user.username}}</td>
+        <td>{{ ticket.engineerAssigned.user.username }}</td>
+        <!-- <td>{{ ticket.feeback}}</td> -->
+
+      </tr>
+    </tbody>
+  </table>
+<br>
 <form
     name="form"
     (ngSubmit)="onSubmit()"

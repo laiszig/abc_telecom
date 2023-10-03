@@ -56,3 +56,19 @@ form {
     background-color: #ffffff;
   }
   
+  .nav-link {
+    display: inline-block;
+    padding: 5px 10px;
+    font-size: 12px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #fff;
+    background-color: #d40707;
+    border: none;
+    border-radius: 2px;
+    transition: background-color 0.3s ease;
+}
+
+.nav-link:hover {
+    background-color: #7f1717;
+}

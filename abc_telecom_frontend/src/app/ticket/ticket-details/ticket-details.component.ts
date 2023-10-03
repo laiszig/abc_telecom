@@ -36,4 +36,9 @@ export class TicketDetailsComponent {
     });
   })}
   
+  redirectToTicketAssignment(event: any) {
+    const ticketId = this.ticket.id;
+    const url: String = "/ticket/update/" + ticketId;
+    this.router.navigate([url]);
+  }
 }

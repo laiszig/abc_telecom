@@ -1,0 +1,94 @@
+.update-ticket-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #7f1717;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+form {
+    border: 1px solid grey;
+    border-collapse: collapse;
+    padding: 15px;
+    background-color: #f1f1f1;
+    max-width: 400px;
+    margin: 0;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+select,
+button {
+    width: calc(100% - 22px);
+    padding: 5px;
+    margin-bottom: 10px;
+    margin-right: 22px;
+    display: inline-block;
+}
+
+button {
+    background-color: #d40707;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #7f1717;
+}
+
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+form div:nth-child(odd) {
+    background-color: #f1f1f1;
+}
+
+form div:nth-child(even) {
+    background-color: #ffffff;
+}
+
+.ticket-details-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #7f1717;
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }  
+
+  table, th , td {
+    border: 1px solid grey;
+    border-collapse: collapse;
+    padding: 5px;
+  }
+  
+  table tr:nth-child(odd) {
+    background-color: #f1f1f1;
+  }
+  
+  table tr:nth-child(even) {
+    background-color: #ffffff;
+  }
+  
+  .nav-link {
+    display: inline-block;
+    padding: 5px 10px;
+    font-size: 12px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #fff;
+    background-color: #d40707;
+    border: none;
+    border-radius: 2px;
+    transition: background-color 0.3s ease;
+}
+
+.nav-link:hover {
+    background-color: #7f1717;
+}

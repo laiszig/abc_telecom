@@ -18,6 +18,7 @@
       <th>Manager Assigned</th>
       <th>Engineer Assigned</th>
       <!-- <th>Feedback</th> -->
+      <th></th>
       </tr>
     </thead>
     <tbody>
@@ -30,6 +31,8 @@
         <td>{{ ticket.managerAssigned.user.username}}</td>
         <td>{{ ticket.engineerAssigned.user.username }}</td>
         <!-- <td>{{ ticket.feeback}}</td> -->
+        <button (click)="redirectToTicketAssignment($event);" value="{{ ticket.id }}"> Assign </button>
+        
       </tr>
     </tbody>
   </table>
