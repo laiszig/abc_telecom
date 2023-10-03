@@ -19,11 +19,5 @@ export class TicketDetailsService {
     console.log(id)
     return this.http.get<Ticket>(this.url + "/ticket/" + id);
   }
-/**
-  getTicketDetails(id: number) {
-    const url: String = "/ticket/details/" + id
-    this.router.navigate([url]);
-  }
-  */
 
 }
