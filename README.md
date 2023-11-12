@@ -1,4 +1,4 @@
-# Sporty Shoes
+# ABC Telecom
 
 ![GitHub repo size](https://img.shields.io/github/repo-size/laiszig/abc_telecom?style=for-the-badge)
 ![GitHub language count](https://img.shields.io/github/languages/count/laiszig/abc_telecom?style=for-the-badge)
